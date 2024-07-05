@@ -38,7 +38,7 @@ public class SeleniumTest {
         System.out.println("Title: " + title);
 
         // Verify the title of the page
-        Assert.assertEquals(title, "Google");
+        Assert.assertEquals(title, "Yahoo");
     }
 
     @AfterClass
