@@ -1,6 +1,7 @@
 package com.sauce.utils;
 
 import java.time.Duration;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -24,7 +25,7 @@ public class HelperFunctions {
 
     public void customImplicitWait(long seconds) {
 	try {
-	    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(seconds));
+	    driver.manage().timeouts().implicitlyWait(seconds, TimeUnit.SECONDS);
 	} catch (Exception e) {
 	    e.printStackTrace();
 	}
@@ -98,18 +99,18 @@ public class HelperFunctions {
 	}
     }
 
-    public void explicitWaitForElementClick(String xpath, double timeOutInseconds, double pollFreqInSeconds) {
-	long timeOutInMillis = (long) (timeOutInseconds * 1000.000);
+    public void explicitWaitForElementClick(String xpath, double timeOutInSeconds, double pollFreqInSeconds) {
+	long timeOutInMillis = (long) (timeOutInSeconds * 1000.000);
 	long pollFreqInMillis = (long) (pollFreqInSeconds * 1000);
-	explicitWait = new WebDriverWait(driver, Duration.ofMillis(timeOutInMillis));
+	explicitWait = new WebDriverWait(driver, (long)timeOutInSeconds);
 	explicitWait.withTimeout(Duration.ofMillis(timeOutInMillis)).pollingEvery(Duration.ofMillis(pollFreqInMillis))
 		.until(ExpectedConditions.elementToBeClickable(By.xpath(xpath)));
     }
 
-    public void explicitWaitForEleemntClick(WebElement element, double timeOutInseconds, double pollFreqInSeconds) {
-	long timeOutInMillis = (long) (timeOutInseconds * 1000.000);
+    public void explicitWaitForEleemntClick(WebElement element, double timeOutInSeconds, double pollFreqInSeconds) {
+	long timeOutInMillis = (long) (timeOutInSeconds * 1000.000);
 	long pollFreqInMillis = (long) (pollFreqInSeconds * 1000);
-	explicitWait = new WebDriverWait(driver, Duration.ofMillis(timeOutInMillis));
+	explicitWait = new WebDriverWait(driver, (long) timeOutInSeconds);
 	explicitWait.withTimeout(Duration.ofMillis(timeOutInMillis)).pollingEvery(Duration.ofMillis(pollFreqInMillis))
 		.until(ExpectedConditions.elementToBeClickable(element));
     }

@@ -2,20 +2,20 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-07-07T12:20:13 IST" name="Suite" finished-at="2024-07-07T12:20:20 IST" duration-ms="6449">
+  <suite started-at="2024-07-07T12:46:12 IST" name="Suite" finished-at="2024-07-07T12:46:19 IST" duration-ms="7708">
     <groups>
     </groups>
-    <test started-at="2024-07-07T12:20:13 IST" name="Test" finished-at="2024-07-07T12:20:20 IST" duration-ms="6449">
+    <test started-at="2024-07-07T12:46:12 IST" name="Test" finished-at="2024-07-07T12:46:19 IST" duration-ms="7708">
       <class name="com.sauce.test.SeleniumTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.sauce.test.SeleniumTest@11bd0f3b]" started-at="2024-07-07T12:20:13 IST" name="setUp" finished-at="2024-07-07T12:20:15 IST" duration-ms="1617" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.sauce.test.SeleniumTest@11bd0f3b]" started-at="2024-07-07T12:46:12 IST" name="setUp" finished-at="2024-07-07T12:46:14 IST" duration-ms="1915" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="testGoogleTitle()[pri:0, instance:com.sauce.test.SeleniumTest@11bd0f3b]" started-at="2024-07-07T12:20:15 IST" name="testGoogleTitle" finished-at="2024-07-07T12:20:19 IST" duration-ms="4564" status="PASS">
+        <test-method signature="testGoogleTitle()[pri:0, instance:com.sauce.test.SeleniumTest@11bd0f3b]" started-at="2024-07-07T12:46:14 IST" name="testGoogleTitle" finished-at="2024-07-07T12:46:19 IST" duration-ms="5441" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testGoogleTitle -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.sauce.test.SeleniumTest@11bd0f3b]" started-at="2024-07-07T12:20:19 IST" name="tearDown" finished-at="2024-07-07T12:20:20 IST" duration-ms="237" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.sauce.test.SeleniumTest@11bd0f3b]" started-at="2024-07-07T12:46:19 IST" name="tearDown" finished-at="2024-07-07T12:46:19 IST" duration-ms="299" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
