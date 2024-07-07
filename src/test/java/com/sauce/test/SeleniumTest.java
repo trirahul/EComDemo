@@ -14,50 +14,53 @@ import com.sauce.utils.HelperFunctions;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class SeleniumTest {
-    WebDriver driver;
+	WebDriver driver;
 
-    @BeforeClass
-    public void setUp() {
-    	WebDriverManager.chromedriver().browserVersion("126.0.6478.127").setup();
+	@BeforeClass
+	public void setUp() {
+//    	WebDriverManager.chromedriver().setup();
 //        WebDriverManager.chromedriver().setup();
-        // Create an instance of ChromeOptions
-    	
+		// Create an instance of ChromeOptions
+		System.setProperty("webdriver.chrome.driver", "./drivers/chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--disable-infobars");
-        options.addArguments("--disable-notifications");
-        options.addArguments("--disable-sync");
+//        options.addArguments("--remote-allow-origins=*");
+//        options.addArguments("--disable-infobars");
+//        options.addArguments("--disable-notifications");
+
 //        options.addArguments("--headless");
-        // Initialize a new WebDriver instance of ChromeDriver with options
-        driver = new ChromeDriver(options);
-        driver.manage().window().maximize();
-    }
+		// Initialize a new WebDriver instance of ChromeDriver with options
+		driver = new ChromeDriver(options);
+		driver.navigate().refresh();
+		driver.manage().window().maximize();
+	}
 
-    @Test
-    public void testGoogleTitle() throws Exception {
-        // Open a website
-	HelperFunctions help = null;
-        driver.get("https://www.google.com");
-        help = new HelperFunctions(driver);
-        // Get the title of the page
-        String title = driver.getTitle();
-        
-        help.customExplicitWaitTillElementBecomesActive("//textarea[@aria-label='Search']", 2, 1);
-        help.customExplicitWaitTillElementBecomesClickable("//textarea[@aria-label='Search']", 5, 0.5);
-        driver.findElement(By.xpath("//textarea[@aria-label='Search']")).click();
-        help.customExplicitWaitTillElementBecomesClickable("//textarea[@aria-label='Search']", 5, 0.5);
-        driver.findElement(By.xpath("//textarea[@aria-label='Search']")).sendKeys("Hello Bhai");
-        // Print the title of the page
-        System.out.println("Title: " + title);
+	@Test
+	public void testGoogleTitle() throws Exception {
+		// Open a website
+		HelperFunctions help = null;
+		
+		driver.get("https://www.google.com");
+		help = new HelperFunctions(driver);
+		// Get the title of the page
+		String title = driver.getTitle();
 
-        // Verify the title of the page
-        Assert.assertEquals(title, "Google");
-    }
+		help.customExplicitWaitTillElementBecomesActive("//textarea[@aria-label='Search']", 2, 1);
+		help.customExplicitWaitTillElementBecomesClickable("//textarea[@aria-label='Search']", 5, 0.5);
+		driver.findElement(By.xpath("//textarea[@aria-label='Search']")).click();
+		help.customExplicitWaitTillElementBecomesClickable("//textarea[@aria-label='Search']", 5, 0.5);
+		driver.findElement(By.xpath("//textarea[@aria-label='Search']")).sendKeys("Hello Bhai");
+		// Print the title of the page
+		System.out.println("Title: " + title);
 
-    @AfterClass
-    public void tearDown() {
-        // Close the browser
-        if (driver != null) {
-            driver.quit();
-        }
-    }
+		// Verify the title of the page
+		Assert.assertEquals(title, "Google");
+	}
+
+	@AfterClass
+	public void tearDown() {
+		// Close the browser
+		if (driver != null) {
+			driver.quit();
+		}
+	}
 }
