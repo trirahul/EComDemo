@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.sauce.test.SeleniumTest">
+      <class name="com.sauce.tests.SauceDemoTest">
         <methods>
-          <include name="testGoogleTitle"/>
-          <include name="setUp"/>
-          <include name="tearDown"/>
+          <include name="setup"/>
+          <include name="teardown"/>
+          <include name="testLogin" invocation-numbers="0 1"/>
         </methods>
-      </class> <!-- com.sauce.test.SeleniumTest -->
+      </class> <!-- com.sauce.tests.SauceDemoTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

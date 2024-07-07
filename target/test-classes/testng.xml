@@ -2,7 +2,7 @@
 <suite name="Suite">
     <test name="Test">
         <classes>
-            <class name="com.sauce.test.SeleniumTest"/>
+            <class name="com.sauce.tests.LoginTest"/>
         </classes>
     </test>
 </suite>
